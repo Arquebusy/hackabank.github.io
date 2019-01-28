@@ -114,6 +114,18 @@ label {
   text-align: center;
 }
 
+@media screen (and max-width 600px ) {
+  .text-logo {
+    font-size: 9rem;
+  }
+}
+
+@media screen (and max-width 422px ) {
+  .text-logo {
+    font-size: 7rem;
+  }
+}
+
 .btn, input[type=submit] {
   margin-right: 5px;
   text-transform: none;
@@ -269,7 +281,7 @@ p {
   box-shadow: 0 6px 2px -2px gray;
   padding-top: 200px;
   background: url(../includes/img/background.jpg) no-repeat  center center fixed;
-    background-size: 100%;
+    background-size: cover;
     -webkit-clip-path: polygon(30% 0%, 70% 0%, 100% 0, 100% 90%, 51% 100%, 51% 100%, 0 90%, 0 0);
     clip-path: polygon(30% 0%, 70% 0%, 100% 0, 100% 90%, 51% 100%, 51% 100%, 0 90%, 0 0);
 }
