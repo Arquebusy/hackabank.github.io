@@ -1,0 +1,10 @@
+/* TEAM */
+Your title: Guillaume SAGOT.
+Site: guillaume.sagot@epitech.eu.
+Github: SagotG.
+Location: Nice, France.
+
+/* SITE */
+Last update: 2018/8/31
+Standards: HTML5, CSS3, PHP, JS, JQuery.
+Components: Bootstrap, jQuery.
