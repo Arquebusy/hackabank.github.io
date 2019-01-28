@@ -106,30 +106,6 @@ label {
   padding-top: 60px;
 }
 
-.text-logo {
-  font-family :'Somatic-Rounded', sans-serif ;
-  font-size : 12rem;
-  /* font-weight: bold; */
-  color: #fff;
-  text-align: center;
-}
-
-@media screen and (max-width: 600px ) {
-  .text-logo {
-    font-size: 9rem ;
-  }
-}
-
-@media screen and (max-width: 422px ) {
-  .intro {
-    padding: 90px 0;
-    padding-top: 90px;
-  }
-  .text-logo {
-    font-size: 7rem !important;
-  }
-}
-
 .btn, input[type=submit] {
   margin-right: 5px;
   text-transform: none;
@@ -150,12 +126,6 @@ label {
   color: black !important;
 }
 
-.fixed-demo-1 {
-  width: 55%;
-  margin: 0 auto;
-  background: url('../img/view1_.png') fixed;
-}
-
 /**
 card
 */
@@ -172,25 +142,6 @@ card
   box-shadow: 0 1px 3px 0 #d4d4d5, 0 0 0 1px #d4d4d5;
 }
 
-.card-intro {
-  font-size: 1em;
-  position: relative;
-  margin: 0;
-  padding: 2.5rem;
-  border: none;
-  border-top: 1px solid rgba(34, 36, 38, .1);
-  box-shadow: none;
-  background-color: white;
-}
-
-@media screen and (max-width: 600px) {
-   .slide-type-design,
-   .slide-type-shortlists,
-   .slide-type-ingredients,
-   .slide-type-flavors {
-    background-size: 90%;
-  }
-}
 
 @media screen and (max-aspect-ratio: 7/10) {
   .full-slide-copy {
@@ -277,13 +228,38 @@ p {
 .intro {
   min-height: 91vh;
   width: 100%;
-  padding: 150px 0;
+  padding: 100px 0;
   box-shadow: 0 6px 2px -2px gray;
   padding-top: 200px;
   background: url(../includes/img/background.jpg) no-repeat  center center fixed;
     background-size: auto;
     -webkit-clip-path: polygon(30% 0%, 70% 0%, 100% 0, 100% 90%, 51% 100%, 51% 100%, 0 90%, 0 0);
     clip-path: polygon(30% 0%, 70% 0%, 100% 0, 100% 90%, 51% 100%, 51% 100%, 0 90%, 0 0);
+}
+
+
+.text-logo {
+  font-family :'Somatic-Rounded', sans-serif ;
+  font-size : 12rem;
+  /* font-weight: bold; */
+  color: #fff;
+  text-align: center;
+}
+
+@media screen and (max-width: 600px ) {
+  .text-logo {
+    font-size: 9rem ;
+  }
+}
+
+@media screen and (max-width: 422px ) {
+  .intro {
+    padding: 90px 0;
+    padding-top: 90px;
+  }
+  .text-logo {
+    font-size: 7rem !important;
+  }
 }
 
 h2.header-name {

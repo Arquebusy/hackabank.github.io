@@ -20,10 +20,10 @@
 <header id="top-page">
   <div class="intro">
     <center>
-      <img src="./includes/img/logo-light.png" width="25%" style="margin-top: -10vh;">
+      <img src="./includes/img/logo-light.png" width="20%" style="margin-top: -15vh;">
       <h1 class="text-logo">Hack a Bank</h1>
       <hr style="width:50%">
-      <h4 style="color: white; font-size: 4rem">Innovate with Fintech</h4>
+      <h4 style="color: white; font-size: 3.4rem">Innovate with Fintech</h4>
       <p style="color: white; font-size: 2.7rem" class="text-center" id="Challenges"></p>
     </center>
   </div>
@@ -141,7 +141,7 @@
   map.setCenter(position, zoom);
 
 
-  var countDownDate = new Date("Mars 29, 2019 18:00:00").getTime();
+  var countDownDate = new Date("2019 3 29 18:00:00").getTime();
   var x = setInterval(function() {
     var now = new Date().getTime();
     var distance = countDownDate - now;
@@ -154,6 +154,7 @@
     document.getElementById("Start").innerHTML = days + " days - " + hours + "h "
     + minutes + "m " + seconds + "s ";
 
+    console.log(days + hours + minutes);
     if (distance < 0) {
       clearInterval(x);
       document.getElementById("Challenges").innerHTML = "Good Luck!";
@@ -186,20 +187,6 @@
       overlayOff();
     }
   });
-
-  function  newForm() {
-    document.getElementById('contactForm').style.display = "none";
-    document.getElementById('news').style.display = "none";
-    document.getElementById('newsletterform').style.display = "block";
-    document.getElementById('cont').style.display = "block";
-  }
-
-  function  newCont() {
-    document.getElementById('contactForm').style.display = "block";
-    document.getElementById('news').style.display = "block";
-    document.getElementById('newsletterform').style.display = "none";
-    document.getElementById('cont').style.display = "none";
-  }
 
   </script>
 
