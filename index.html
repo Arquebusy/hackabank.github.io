@@ -31,7 +31,7 @@
 </header>
 
 <body>
-  <div class="full-slide full-slide-white text-center" style="-webkit-clip-path: polygon(0 8%, 100% 0, 100% 100%, 0 91%);clip-path: polygon(0 0%, 100% 0, 100% 100%, 0 100%); margin-top: -90px; z-index:-1;">
+  <div id="about" class="full-slide full-slide-white text-center" style="-webkit-clip-path: polygon(0 8%, 100% 0, 100% 100%, 0 91%);clip-path: polygon(0 0%, 100% 0, 100% 100%, 0 100%); margin-top: -90px; z-index:-1;">
     <div class="container">
       <div class="container-fluid">
         <div class="row">
@@ -104,8 +104,7 @@
         <div class="row" style="margin-left: 10%">
           <ul class="list-group" style="margin: 10 auto;">
             <li style="text-align: left" class="list-group-item"><a href="#top-page" style="color: white;">Home</a></li>
-            <li style="text-align: left" class="list-group-item"><a href="#slider" style="color: white;">About</a></li>
-
+            <li style="text-align: left" class="list-group-item"><a href="#about" style="color: white;">About</a></li>
             <li style="text-align: left" class="list-group-item"><a href="#contact" style="color: white;">Register</a></li>
           </ul>
         </div>
@@ -114,80 +113,80 @@
   </div>
   <a id="opener" class="menu-button" onclick="overlayOn()"><i class="material-icons" style="font-size: 30pt;">dehaze</i></a>
 </body>
-  <scritp src="https://cdnjs.cloudflare.com/ajax/libs/flickity/2.1.1/flickity.pkgd.min.js"></scritp>
+<scritp src="https://cdnjs.cloudflare.com/ajax/libs/flickity/2.1.1/flickity.pkgd.min.js"></scritp>
 
-  <script src="vendor/jquery/jquery.min.js"></script>
-  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="js/jqBootstrapValidation.js"></script>
-  <script src="OpenLayers/OpenLayers.js"></script>
-  <script>
+<script src="vendor/jquery/jquery.min.js"></script>
+<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="js/jqBootstrapValidation.js"></script>
+<script src="OpenLayers/OpenLayers.js"></script>
+<script>
 
-  var lat            = 52.5084806;
-  var lon            = 13.329300900000021;
-  var zoom           = 18;
+var lat            = 52.5084806;
+var lon            = 13.329300900000021;
+var zoom           = 18;
 
-  var fromProjection = new OpenLayers.Projection("EPSG:4326");   // Transform from WGS 1984
-  var toProjection   = new OpenLayers.Projection("EPSG:900913"); // to Spherical Mercator Projection
-  var position       = new OpenLayers.LonLat(lon, lat).transform( fromProjection, toProjection);
+var fromProjection = new OpenLayers.Projection("EPSG:4326");   // Transform from WGS 1984
+var toProjection   = new OpenLayers.Projection("EPSG:900913"); // to Spherical Mercator Projection
+var position       = new OpenLayers.LonLat(lon, lat).transform( fromProjection, toProjection);
 
-  map = new OpenLayers.Map("Map");
-  var mapnik         = new OpenLayers.Layer.OSM();
-  map.addLayer(mapnik);
+map = new OpenLayers.Map("Map");
+var mapnik         = new OpenLayers.Layer.OSM();
+map.addLayer(mapnik);
 
-  var markers = new OpenLayers.Layer.Markers( "Markers" );
-  map.addLayer(markers);
-  markers.addMarker(new OpenLayers.Marker(position));
+var markers = new OpenLayers.Layer.Markers( "Markers" );
+map.addLayer(markers);
+markers.addMarker(new OpenLayers.Marker(position));
 
-  map.setCenter(position, zoom);
-
-
-  var countDownDate = new Date("2019 3 29 18:00:00").getTime();
-  var x = setInterval(function() {
-    var now = new Date().getTime();
-    var distance = countDownDate - now;
-    var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-    var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-    var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-    document.getElementById("Challenges").innerHTML = "Start in " + days + " days - " + hours + "h " + minutes + "m " + seconds + "s ";
-    document.getElementById("Start").innerHTML = days + " days - " + hours + "h "
-    + minutes + "m " + seconds + "s ";
-
-    console.log(days + hours + minutes);
-    if (distance < 0) {
-      clearInterval(x);
-      document.getElementById("Challenges").innerHTML = "Good Luck!";
-    }
-  }, 1000);
+map.setCenter(position, zoom);
 
 
-  $('#overlay').hide();
-  function overlayOn() {
-    $('#overlay').fadeIn(500);
+var countDownDate = new Date("2019 3 29 18:00:00").getTime();
+var x = setInterval(function() {
+  var now = new Date().getTime();
+  var distance = countDownDate - now;
+  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+  document.getElementById("Challenges").innerHTML = "Start in " + days + " days - " + hours + "h " + minutes + "m " + seconds + "s ";
+  document.getElementById("Start").innerHTML = days + " days - " + hours + "h "
+  + minutes + "m " + seconds + "s ";
+
+  console.log(days + hours + minutes);
+  if (distance < 0) {
+    clearInterval(x);
+    document.getElementById("Challenges").innerHTML = "Good Luck!";
   }
+}, 1000);
 
-  function overlayOff() {
+
+$('#overlay').hide();
+function overlayOn() {
+  $('#overlay').fadeIn(500);
+}
+
+function overlayOff() {
+  $("#overlay").fadeOut(500);
+}
+
+$(document).keydown(function(e) {
+  if (e.keyCode === 27) {
     $("#overlay").fadeOut(500);
+  };
+});
+
+$('a[href^="#"]').on('click', function(event) {
+  var target = $(this.getAttribute('href'));
+  if( target.length ) {
+    event.preventDefault();
+    $('html, body').stop().animate({
+      scrollTop: target.offset().top
+    }, 1000);
+    overlayOff();
   }
+});
 
-  $(document).keydown(function(e) {
-    if (e.keyCode === 27) {
-      $("#overlay").fadeOut(500);
-    };
-  });
-
-  $('a[href^="#"]').on('click', function(event) {
-    var target = $(this.getAttribute('href'));
-    if( target.length ) {
-      event.preventDefault();
-      $('html, body').stop().animate({
-        scrollTop: target.offset().top
-      }, 1000);
-      overlayOff();
-    }
-  });
-
-  </script>
+</script>
 
 </html>
