@@ -258,6 +258,12 @@ p {
     }
 }
 
+@media screen and (min-width:1064px) {
+    .intro {
+        background-attachment: fixed;
+    }
+}
+
 h2.header-name {
     font-weight: 900;
     font-size: 5rem;
